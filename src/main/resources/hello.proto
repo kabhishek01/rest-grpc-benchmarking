@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.kabh.grpc";
+option java_outer_classname = "HelloGrpcService";
+
+package com.kabh.grpc;
+
+// HelloRequest is the request for Hello.
+message HelloRequest {
+  string message = 1;
+}
+
+// HelloResponse is the response for Hello.
+message HelloResponse {
+  string message = 1;
+}
+
+// Hello is the Hello service.
+service HelloService {
+  // UnaryHello is unary Hello.
+  rpc UnaryHello(HelloRequest) returns (HelloResponse) {}
+  // ServerStreamingHello is server side streaming.
+  rpc ServerStreamingHello(HelloRequest) returns (stream HelloResponse) {}
+  // ClientStreamingHello is client side streaming.
+  rpc ClientStreamingHello(stream HelloRequest) returns (HelloResponse) {}
+
+}
