@@ -10,7 +10,7 @@ public class HelloGrpcServiceImpl {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        Server server = ServerBuilder.forPort(8080)
+        Server server = ServerBuilder.forPort(8088)
                 .addService(new HelloServiceImpl())
                 .build();
 
