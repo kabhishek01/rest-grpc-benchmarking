@@ -77,6 +77,7 @@ public class WeatherApiRestGrpcClient {
             measure.setIterationCount(iterationCount);
             measure.setPayLoadCount(payloadCount);
             measure.setSumResponseTime(measure.getSumResponseTime() + duration);
+            metricsMap.put(methodName, measure);
         }
     }
     private static void printHeaders()
