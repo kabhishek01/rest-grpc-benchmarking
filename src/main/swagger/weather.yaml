@@ -1,0 +1,169 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Weather Data API to compare REST vs. GRPC timings.
+paths:
+  /weather:
+    post:
+      summary: Create/inserts the weather data
+      operationId: PostWeather
+      tags:
+        - Weather API
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WeatherData'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+        '400':
+          $ref: '#/components/responses/IllegalInput'
+    get:
+      summary: Get weather data
+      operationId: GetWeather
+      tags:
+        - Weather Data API
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherData'
+  /weatherbulk:
+    post:
+      summary: Create/inserts the weather data
+      operationId: PostWeatherBulk
+      tags:
+        - Weather API
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WeatherData'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+        '400':
+          $ref: '#/components/responses/IllegalInput'
+    get:
+      summary: Get weather data
+      operationId: GetWeatherBulk
+      tags:
+        - Weather Data API
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherData'
+
+  /weatherbulklist:
+    post:
+      summary: Create/inserts the weather data
+      operationId: PostWeatherBulkList
+      tags:
+        - Weather API
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WeatherDataList'
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmptyResponse'
+        '400':
+          $ref: '#/components/responses/IllegalInput'
+    get:
+      summary: Get weather data
+      operationId: GetWeatherBulkList
+      tags:
+        - Weather Data API
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeatherDataList'
+
+
+components:
+  schemas:
+    WeatherData:
+      type: object
+      properties:
+        date:
+          description: Weather Data content
+          type: string
+          format: date
+        tmin:
+          description: Weather Data content
+          type: integer
+          format: int64
+        tmax:
+          description: Weather Data content
+          type: integer
+          format: int64
+        prcp:
+          description: Weather Data content
+          type: number
+        snow:
+          description: Weather Data content
+          type: number
+        snwd:
+          description: Weather Data content
+          type: number
+        awnd:
+          description: Weather Data content
+          type: number
+
+    WeatherDataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/WeatherData'
+
+    EmptyResponse:
+      type: object
+      properties:
+        code:
+          type : integer
+        message:
+          type: string
+
+    WeatherParameter:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        rows_count:
+          type: integer
+
+  responses:
+    NotFound:
+      description: The resource is not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyResponse'
+    IllegalInput:
+      description: The input is invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/EmptyResponse'
