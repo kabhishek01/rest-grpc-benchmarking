@@ -43,21 +43,6 @@
             <artifactId>okhttp</artifactId>
             <version>${okhttp.version}</version>
         </dependency>
-        <!--dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>6.1.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>3.2.3</version>
-        </dependency-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -74,6 +59,62 @@
             <artifactId>javax.annotation-api</artifactId>
             <version>1.3.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.gsonfire/gson-fire -->
+        <dependency>
+            <groupId>io.gsonfire</groupId>
+            <artifactId>gson-fire</artifactId>
+            <version>1.9.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable >
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>jackson-databind-nullable</artifactId>
+            <version>0.2.6</version>
+        </dependency-->
+        <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>2.2.20</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webflux -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>6.1.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -124,6 +165,56 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <!-- RELEASE_VERSION -->
+                <version>7.3.0</version>
+                <!-- /RELEASE_VERSION -->
+                <executions>
+                    <!--execution>
+                        <id>server-code-gen</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/swagger/weather.yaml</inputSpec>
+                            <generatorName>spring</generatorName>
+                            <generateSupportingFiles>true</generateSupportingFiles>
+                            <generateApis>true</generateApis>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelTests>false</generateModelTests>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <modelPackage>com.kabh.server.rest.model</modelPackage>
+                                <apiPackage>com.kabh.server.rest.server.api</apiPackage>
+                                <language>java</language>
+                            </configOptions>
+                        </configuration>
+                    </execution-->
+                    <execution>
+                        <id>client-code-gen</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/swagger/weather.yaml</inputSpec>
+                            <generatorName>java</generatorName>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <generateApis>false</generateApis>
+                            <generateApiTests>false</generateApiTests>
+                            <generateModelTests>false</generateModelTests>
+                            <configOptions>
+                                <sourceFolder>src/gen/java/main</sourceFolder>
+                                <modelPackage>com.kabh.server.rest.model</modelPackage>
+                                <apiPackage>com.kabh.server.rest.client.api</apiPackage>
+                                <language>java</language>
+                            </configOptions>
+                            <library>resttemplate</library>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
@@ -144,6 +235,9 @@
             <resource>
                 <directory>${project.build.directory}/generated-resources/java</directory>
             </resource>
+            <!--resource>
+                <directory>${project.build.directory}/generated-resources/openapi/src/gen/java/main</directory>
+            </resource-->
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>

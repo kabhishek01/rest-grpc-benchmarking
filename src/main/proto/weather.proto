@@ -1,0 +1,46 @@
+syntax = "proto3";
+package com.kabh.grpc.model;
+import "google/protobuf/timestamp.proto";
+
+//option go_package = "google.golang.org/grpc/health/grpc_health_v1";
+option java_multiple_files = true;
+option java_package = "com.kabh.server.grpc";
+
+
+// Weather Service
+service WeatherService {
+  rpc GetWeather(WeatherParameters) returns (WeatherData) {}
+  rpc GetWeatherBulk(WeatherParameters) returns (stream WeatherData) {}
+  rpc GetWeatherBulkList(WeatherParameters) returns (WeatherDataList) {}
+  rpc PostWeather(WeatherData) returns (EmptyResponse) {}
+  rpc PostWeatherBulk(stream WeatherData) returns (EmptyResponse) {}
+  rpc PostWeatherBulkList(WeatherDataList) returns (EmptyResponse) {}
+}
+
+// Message Structure
+message WeatherData {
+  google.protobuf.Timestamp date = 1;
+  int32 tmin = 2;
+  int32 tmax = 3;
+  double prcp = 4;
+  double snow = 5;
+  double snwd = 6;
+  double awnd = 7;
+
+}
+
+message WeatherParameters {
+  google.protobuf.Timestamp date = 1;
+  int32 rows_count = 2;
+}
+
+message WeatherDataList {
+  repeated  WeatherData weather_data = 1;
+}
+
+message EmptyResponse {
+    int32 response_code = 1;
+    string message = 2;
+}
+
+

@@ -5,6 +5,11 @@ import java.io.InputStream;
 
 public class FileUtils {
 
+    /**
+     * Method loads the files from the resouces and returns as inputStream.
+     * @param fileName
+     * @return
+     */
     public static InputStream getFileFromResourceAsStream(String fileName) {
 
         // The class loader that loaded the class
