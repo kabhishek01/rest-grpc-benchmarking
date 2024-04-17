@@ -80,5 +80,11 @@ When program runs its prints the results in below format
 
 # Results
 
+## Rest vs gRPC - GET
+
+As you can see in the graph below , gRPC is almost 7x faster than Rest GET. 
+<img width="765" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/f66587ad-bd42-4fdd-b37b-545d0c6fe1ef">
+
+
 
 
