@@ -73,4 +73,10 @@ To my surprise, although gRPC has little better response time, it was negligible
 
 
 # Rest vs gRPC - GET as LIST
+GET operation in this test refers to a invocation in which Rest and gRPC clients asks for a in the batch of 100/200/500/1000/2000 weather records from respective servers.
+
+gRPC outperforms the REST by 4x on average. 
+
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/923d33be-7edd-4b27-9324-02c6065f9390)
+<img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/6e30e298-7efa-4686-9d40-07894096cab1">
 
