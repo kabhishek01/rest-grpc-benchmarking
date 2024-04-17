@@ -84,13 +84,6 @@ When program runs its prints the results in below format
 GET operation in this refer to a invocation in which Rest and gRPC clients asks for a single weather records from respective servers.
 
 gRPC outperforms the REST by 7x 
-- METHOD 	       Iterations 	 Objects Count 	 Mean (ns) 	 Mean (ms)
-- GRPC-SYNC-GET 	      2000	         1	            168534	      0
-- GRPC-SYNC-GET 	      1000	         1	            182012	      0
-- GRPC-SYNC-GET 	      500	         1	            547279	      0
-- REST-SYNC-GET 	      500	         1	            8155780	      8
-- REST-SYNC-GET 	      2000	         1	            7775220	      7
-- REST-SYNC-GET 	      1000	         1	            7790938	      7
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/79034a5f-a900-4e1a-9605-1ca0d0caffe5)
 
