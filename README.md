@@ -49,33 +49,33 @@ Note for average/mean I have used very basic average/mean calculation logic.
 
 When program runs its prints the results in below format 
 
-11:06:07.965 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Name : Mac OS X
-11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Version : 14.4.1
-11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Arch : aarch64
-11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- java Version : 19
-11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- Test Started ..
-11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 500 iteration ..
-11:06:56.203 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 1000 iteration ..
-11:08:26.279 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 2000 iteration ..
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- Test Finished ..
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | METHOD | Iterations | Objects Count | Mean (ns) | Mean (ms)
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 500 | 500  | 1793459 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET-BULK | 1000 | 1000  | 5520726 | 5
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 1000 | 2000  | 1736049 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 500 | 100  | 1786355 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 2000 | 100  | 1705343 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET-AS-LIST | 2000 | 200  | 198915 | 0
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-BULK | 2000 | 1000  | 7614859 | 7
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-BULK | 1000 | 100  | 7841856 | 7
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 2000 | 500  | 1695185 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 1000 | 2000  | 1709374 | 1
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET | 2000 | 1  | 168534 | 0
-11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET | 1000 | 1  | 182012 | 0
-.....
-....
-...
-..
-.
+- 11:06:07.965 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Name : Mac OS X
+- 11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Version : 14.4.1
+- 11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- OS Arch : aarch64
+- 11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- java Version : 19
+- 11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- Test Started ..
+- 11:06:07.967 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 500 iteration ..
+- 11:06:56.203 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 1000 iteration ..
+- 11:08:26.279 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- running 2000 iteration ..
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- Test Finished ..
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | METHOD | Iterations | Objects Count | Mean (ns) | Mean (ms)
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 500 | 500  | 1793459 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET-BULK | 1000 | 1000  | 5520726 | 5
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 1000 | 2000  | 1736049 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 500 | 100  | 1786355 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 2000 | 100  | 1705343 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET-AS-LIST | 2000 | 200  | 198915 | 0
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-BULK | 2000 | 1000  | 7614859 | 7
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-BULK | 1000 | 100  | 7841856 | 7
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-GET-AS-LIST | 2000 | 500  | 1695185 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | REST-SYNC-POST-AS-LIST | 1000 | 2000  | 1709374 | 1
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET | 2000 | 1  | 168534 | 0
+- 11:11:25.506 [main] INFO com.kabh.client.WeatherApiRestGrpcClient -- | GRPC-SYNC-GET | 1000 | 1  | 182012 | 0
+- .....
+- ....
+- ...
+- ..
+- .
 
 
 # Results
