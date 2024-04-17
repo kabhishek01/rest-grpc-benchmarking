@@ -73,11 +73,35 @@ To my surprise, although gRPC has little better response time, it was negligible
 
 
 # Rest vs gRPC - GET as LIST
-GET operation in this test refers to a invocation in which Rest and gRPC clients asks for a in the batch of 100/200/500/1000/2000 weather records from respective servers.
+GET operation in this test refers to a invocation in which Rest and gRPC clients asks for the data in the batch of 100/200/500/1000/2000 weather records from respective servers.
 
-gRPC outperforms the REST by 4x on average. 
+gRPC outperforms the REST by 6x on average. 
+Although gRPC performace started to degrade as the size of the load/batch increased. 
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/7de64f85-43b3-4e21-b72b-29e1f04c69ae)
 
+Note in the graph below 100/200/500/1000/2000 denotes the size of the batch.
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/6e30e298-7efa-4686-9d40-07894096cab1">
+
+
+# Rest vs gRPC - POST as LIST
+POST operation in this test refers to a invocation in which Rest and gRPC clients sends in the batch of 100/200/500/1000/2000 weather records to respective servers.
+
+gRPC outperforms the REST by 5x on average. 
+Interesting observation is that, POST behaviour with batches of load is completely different that a single record POST.
+I was not able to investigate this deviation is behaviour but for sure if there payload size is huge, gRPC is winning the round !!
+
+
+GRPC-SYNC-POST-AS-LIST 	296585.6667
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/027f1256-a7e9-40ec-a704-740940175a09)
+<img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/e097e143-eda7-47ed-8885-5c1f4cd421bb">
+
+
+# Rest vs gRPC - GET as Bulk
+GET operation in this test refers to a invocation in which Rest and gRPC clients asks for the data in a stream which is batch of 100/200/500/1000/2000 weather records from respective servers.
+
+Although gRPC performs 2x faster than REST, REST response time remained consistent through out the test irrespective of batch size,  on the other hand gRPC response time kept climbing and it surpassed REST time of the load of 2000 record batches. If this is just one of the case or the consistent behaviour, it need to tested on a different machines to figure out.
+
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/46f7badf-0338-40b9-84d4-eb0e93a3e733)
+<img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a793c437-4c91-472b-a82b-d49c6e9521ab">
 
