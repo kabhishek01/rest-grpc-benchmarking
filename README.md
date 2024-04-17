@@ -44,6 +44,9 @@ Test is divided into 3 categories of the data done over iteration of 500 , 1000 
 - List of 100,200,500,1000,2000 weather records is passed in GET & POST method for REST/gRPC.
 - Bulk(Stream) of 100,200,500,1000,2000 weather recods is passed in GET method for REST/gRPC.
 
+Example of single record of weather data -
+{"date": "2017-01-01", "tmin": 41, "tmax": 50, "prcp": 0.54, "snow": 0.0, "snwd": 0.0, "awnd": 6.49}
+
 Each of these operation over 500/1000/2000 iteration are averaged out for response times.
 Note for average/mean I have used very basic average/mean calculation logic. 
 
