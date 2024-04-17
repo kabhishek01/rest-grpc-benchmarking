@@ -22,7 +22,7 @@ This project written to quick draw comparision between 2 popular protocol and hi
 Project uses the weather history data to pass between rest/grpc client and rest/grpc server to measure the response time. 
 Response are measured from the point client makes the call and receives and process the response. To be consistent between both the protocol , request prep time is not measured in the response time and not bench marked. 
 
-Program uses JDK17 and above to run. 
+Program supports JDK17 and above to run. 
 
 As future I will add .bat/.sh script to run the program but for now, this need to be run any of the ide which can support Java.
 
