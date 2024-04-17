@@ -77,6 +77,7 @@ GET operation in this test refers to a invocation in which Rest and gRPC clients
 
 gRPC outperforms the REST by 4x on average. 
 
-![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/923d33be-7edd-4b27-9324-02c6065f9390)
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/7de64f85-43b3-4e21-b72b-29e1f04c69ae)
+
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/6e30e298-7efa-4686-9d40-07894096cab1">
 
