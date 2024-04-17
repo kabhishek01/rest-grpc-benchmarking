@@ -56,7 +56,7 @@ When program runs its prints the results in below format
 ## Rest vs gRPC - GET
 GET operation in this test refers to a invocation in which Rest and gRPC clients asks for a single weather records from respective servers.
 
-gRPC outperforms the REST by 7x on each of the iteration runs. 
+gRPC outperforms the REST by 26x on each of the iteration runs. 
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/79034a5f-a900-4e1a-9605-1ca0d0caffe5)
 
