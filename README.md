@@ -72,9 +72,9 @@ gRPC outperforms the REST by 26x on each of the iteration(500/1000/2000) runs.
 POST operation in this test refers to a invocation in which Rest and gRPC clients sends for a single weather records to respective servers.
 To my surprise, although gRPC has little better response time, it was negligible enough to conclude that both performed equal.
 
-(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/f9f21bf3-ff5b-4793-8fb0-7cfcb8439274)
 
+(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a607500f-1222-44ee-9eed-8b8fbcfd1386)
 
 
