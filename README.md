@@ -110,5 +110,9 @@ Although gRPC performs 2x faster than REST, REST response time remained consiste
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a793c437-4c91-472b-a82b-d49c6e9521ab">
 
 # Conclusion
-gRPC seems to be much faster compare to REST. In my observation if the payload is pure String and does not contains any primitive data types, REST is more suitable and flexible protocol. In case payload has lot of primitive data types, gRPC for sure out performes REST, 
+gRPC seems to be much faster compare to REST. In my observation if the payload is pure String and does not contains any primitive data types, REST is more suitable and flexible protocol. In case payload has lot of primitive data types, gRPC for sure out performes REST but its complex and there is learning curve to it. 
+
+Good read about this topic can be found at https://blog.postman.com/grpc-vs-rest/
+
+
 
