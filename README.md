@@ -61,9 +61,9 @@ GET operation in this test refers to a invocation in which Rest and gRPC clients
 
 gRPC outperforms the REST by 26x on each of the iteration(500/1000/2000) runs. 
 
-(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/79034a5f-a900-4e1a-9605-1ca0d0caffe5)
 
+(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/c24efecc-4575-4cc3-a9e6-6c9b0b9ec9ff)
 
 
