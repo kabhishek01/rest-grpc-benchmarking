@@ -59,8 +59,9 @@ When program runs its prints the results in below format
 ## Rest vs gRPC - GET
 GET operation in this test refers to a invocation in which Rest and gRPC clients asks for a single weather records from respective servers.
 
-gRPC outperforms the REST by 26x on each of the iteration runs. 
+gRPC outperforms the REST by 26x on each of the iteration(500/1000/2000) runs. 
 
+(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/79034a5f-a900-4e1a-9605-1ca0d0caffe5)
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/c24efecc-4575-4cc3-a9e6-6c9b0b9ec9ff)
@@ -71,6 +72,7 @@ gRPC outperforms the REST by 26x on each of the iteration runs.
 POST operation in this test refers to a invocation in which Rest and gRPC clients sends for a single weather records to respective servers.
 To my surprise, although gRPC has little better response time, it was negligible enough to conclude that both performed equal.
 
+(500/1000/2000) --> Represents number of Iterations
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/f9f21bf3-ff5b-4793-8fb0-7cfcb8439274)
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a607500f-1222-44ee-9eed-8b8fbcfd1386)
@@ -96,9 +98,9 @@ gRPC outperforms the REST by 5x on average.
 Interesting observation is that, POST behaviour with batches of load is completely different that a single record POST.
 I was not able to investigate this deviation is behaviour but for sure if there payload size is huge, gRPC is winning the round !!
 
-
-GRPC-SYNC-POST-AS-LIST 	296585.6667
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/027f1256-a7e9-40ec-a704-740940175a09)
+
+Note in the graph below 100/200/500/1000/2000 denotes the size of the batch.
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/e097e143-eda7-47ed-8885-5c1f4cd421bb">
 
 
@@ -107,8 +109,9 @@ GET operation in this test refers to a invocation in which Rest and gRPC clients
 
 Although gRPC performs 2x faster than REST, REST response time remained consistent through out the test irrespective of batch size,  on the other hand gRPC response time kept climbing and it surpassed REST time of the load of 2000 record batches. If this is just one of the case or the consistent behaviour, it need to tested on a different machines to figure out.
 
-
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/46f7badf-0338-40b9-84d4-eb0e93a3e733)
+
+Note in the graph below 100/200/500/1000/2000 denotes the size of the batch.
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a793c437-4c91-472b-a82b-d49c6e9521ab">
 
 # Conclusion
