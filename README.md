@@ -63,7 +63,8 @@ gRPC outperforms the REST by 26x on each of the iteration runs.
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/79034a5f-a900-4e1a-9605-1ca0d0caffe5)
 
-<img width="765" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/3c4ea183-ffc8-421b-9df4-9a7f4b72aa4c">
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/c24efecc-4575-4cc3-a9e6-6c9b0b9ec9ff)
+
 
 
 ## Rest vs gRPC - POST
@@ -72,7 +73,8 @@ To my surprise, although gRPC has little better response time, it was negligible
 
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/f9f21bf3-ff5b-4793-8fb0-7cfcb8439274)
 
-<img width="765" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/4f0ce5f9-61e6-475b-8e75-c34e3bc3e453">
+![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a607500f-1222-44ee-9eed-8b8fbcfd1386)
+
 
 
 ## Rest vs gRPC - GET as LIST
