@@ -6,25 +6,25 @@ More information about gRPC and REST can be can be found at https://en.wikipedia
 
 # Project Structure
 
-Server and Client side code are built into a single maven project structure. 
-Java packages com.kbh.server include  server side code
-Java Packages com.kbh.client include client side code
-package proto contains .proto file
-package swagger contains the swagger file.
+- Server and Client side code are built into a single maven project structure. 
+- Java packages com.kbh.server include  server side code
+- Java Packages com.kbh.client include client side code
+- package proto contains .proto file
+- package swagger contains the swagger file.
 
-Generates protobuf files using mavan plugin, all the generate files are generated under the directory target/generated-sources/protobuf
-Generates rest model files using mavan plugin, all the generate files are generated under the directory target/generated-sources/openapi
+Generates protobuf files using mavan plugin, all the generate proto files are placed under the directory target/generated-sources/protobuf
+Generates rest model files using mavan plugin, all the generate swagger model files are placed under the directory target/generated-sources/openapi
 
 # Project Working
 
-This project written to quick draw comparision between 2 popular protocol and highlights the area's where they each shine. This is not a comprehensive benchmarking and anyone using these data should be doing their own due deligence.
+This project draws a quick comparision between 2 popular protocol and highlights the area's they each excel in terms of GET/POST operation. This is not a comprehensive benchmarking and anyone using these data should be doing their own due deligence.
 
 Project uses the weather history data to pass between rest/grpc client and rest/grpc server to measure the response time. 
-Response are measured from the point client makes the call and receives and process the response. To be consistent between both the protocol , request prep time is not measured in the response time and not bench marked. 
+Response times are measured from the point client makes the call and process the response. To be consistent between both the protocols.
 
 Program supports JDK17 and above to run. 
 
-As future I will add .bat/.sh script to run the program but for now, this need to be run any of the ide which can support Java.
+In future I will add .bat/.sh script to run the program but for now, this need to be run in any of the ide which can support Java.
 
 To run the program 
 1. Maven build the project and make sure build is successful.
@@ -75,7 +75,7 @@ To my surprise, although gRPC has little better response time, it was negligible
 <img width="765" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/4f0ce5f9-61e6-475b-8e75-c34e3bc3e453">
 
 
-# Rest vs gRPC - GET as LIST
+## Rest vs gRPC - GET as LIST
 GET operation in this test refers to a invocation in which Rest and gRPC clients asks for the data in the batch of 100/200/500/1000/2000 weather records from respective servers.
 
 gRPC outperforms the REST by 6x on average. 
@@ -87,7 +87,7 @@ Note in the graph below 100/200/500/1000/2000 denotes the size of the batch.
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/6e30e298-7efa-4686-9d40-07894096cab1">
 
 
-# Rest vs gRPC - POST as LIST
+## Rest vs gRPC - POST as LIST
 POST operation in this test refers to a invocation in which Rest and gRPC clients sends in the batch of 100/200/500/1000/2000 weather records to respective servers.
 
 gRPC outperforms the REST by 5x on average. 
@@ -100,11 +100,15 @@ GRPC-SYNC-POST-AS-LIST 	296585.6667
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/e097e143-eda7-47ed-8885-5c1f4cd421bb">
 
 
-# Rest vs gRPC - GET as Bulk
+## Rest vs gRPC - GET as Bulk
 GET operation in this test refers to a invocation in which Rest and gRPC clients asks for the data in a stream which is batch of 100/200/500/1000/2000 weather records from respective servers.
 
 Although gRPC performs 2x faster than REST, REST response time remained consistent through out the test irrespective of batch size,  on the other hand gRPC response time kept climbing and it surpassed REST time of the load of 2000 record batches. If this is just one of the case or the consistent behaviour, it need to tested on a different machines to figure out.
 
+
 ![image](https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/46f7badf-0338-40b9-84d4-eb0e93a3e733)
 <img width="875" alt="image" src="https://github.com/kabhishek01/rest-grpc-benchmarking/assets/11838719/a793c437-4c91-472b-a82b-d49c6e9521ab">
+
+# Conclusion
+gRPC seems to be much faster compare to REST. In my observation if the payload is pure String and does not contains any primitive data types, REST is more suitable and flexible protocol. In case payload has lot of primitive data types, gRPC for sure out performes REST, 
 
